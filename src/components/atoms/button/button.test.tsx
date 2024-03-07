@@ -1,9 +1,8 @@
-import React from 'react';
 import { describe, it, expect, vi } from 'vitest'
 import { render, fireEvent } from '@testing-library/react';
-import Button, { types } from './';
+import Button, { types } from './button';
 
-describe('button component', () => {
+describe('Button component', () => {
   it('renders primary button correctly', () => {
     const { getByText } = render(<Button onClick={() => { }} type={types.primary}>Primary Button</Button>);
     const button = getByText('Primary Button');

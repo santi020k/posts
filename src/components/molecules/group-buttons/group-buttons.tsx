@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import Button, { types } from '@/atoms/button';
+import Button, { types } from '@/atoms/button/button';
 
 const GroupButtons = () => {
   const handleClick = () => {
