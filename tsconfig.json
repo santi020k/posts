@@ -18,8 +18,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["./src/*"],
+      "@/atoms/*": ["./src/components/atoms/*"],
+      "@/molecules/*": ["./src/components/molecules/*"],
+      "@/organisms/*": ["./src/components/organisms/*"]
+    },
+    "types": ["@testing-library/jest-dom"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
