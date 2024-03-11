@@ -44,6 +44,8 @@ module.exports = {
     ],
     'react/prop-types': 0,
     'unused-imports/no-unused-imports': 'error',
+    'testing-library/prefer-screen-queries': 0,
+    'testing-library/no-manual-cleanup': 0,
     '@stylistic/indent': [
       'error',
       2

@@ -1,32 +1,42 @@
-import { describe, it, expect, vi, afterEach } from 'vitest'
-import { render, fireEvent, cleanup } from '@testing-library/react';
-import GroupButtons from './group-buttons';
+import { cleanup, fireEvent, render } from '@testing-library/react'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
-describe('GroupButtons component', () => {
-  afterEach(() => {
-    cleanup()
-  })
+import GroupButtons from './group-buttons'
 
-  it('renders GroupButtons component correctly', () => {
-    const { getByText } = render(<GroupButtons />);
-    const primaryButton = getByText('Primary Button');
-    const secondaryButton = getByText('Secondary Button');
-    expect(primaryButton).toBeInTheDocument();
-    expect(secondaryButton).toBeInTheDocument();
-  });
+describe(
+  'GroupButtons component',
+  () => {
+    afterEach(() => {
+      cleanup()
+    })
 
-  it('triggers handleClick when buttons are clicked', () => {
-    const { getByText } = render(<GroupButtons />);
-    const primaryButton = getByText('Primary Button');
-    const secondaryButton = getByText('Secondary Button');
+    it(
+      'renders GroupButtons component correctly',
+      () => {
+        const { getByText } = render(<GroupButtons />)
+        const primaryButton = getByText('Primary Button')
+        const secondaryButton = getByText('Secondary Button')
+        expect(primaryButton).toBeInTheDocument()
+        expect(secondaryButton).toBeInTheDocument()
+      }
+    )
 
-    const handleClickMock = vi.fn();
-    primaryButton.onclick = handleClickMock;
-    secondaryButton.onclick = handleClickMock;
+    it(
+      'triggers handleClick when buttons are clicked',
+      () => {
+        const { getByText } = render(<GroupButtons />)
+        const primaryButton = getByText('Primary Button')
+        const secondaryButton = getByText('Secondary Button')
 
-    fireEvent.click(primaryButton);
-    fireEvent.click(secondaryButton);
+        const handleClickMock = vi.fn()
+        primaryButton.onclick = handleClickMock
+        secondaryButton.onclick = handleClickMock
 
-    expect(handleClickMock).toHaveBeenCalledTimes(2);
-  });
-});
+        fireEvent.click(primaryButton)
+        fireEvent.click(secondaryButton)
+
+        expect(handleClickMock).toHaveBeenCalledTimes(2)
+      }
+    )
+  }
+)
