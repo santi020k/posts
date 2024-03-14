@@ -8,6 +8,7 @@ module.exports = {
     React: true,
     JSX: true
   },
+  ignorePatterns: ['*.md'],
   extends: [
     'standard',
     'eslint:recommended',
@@ -46,6 +47,8 @@ module.exports = {
     'unused-imports/no-unused-imports': 'error',
     'testing-library/prefer-screen-queries': 0,
     'testing-library/no-manual-cleanup': 0,
+    indent: 0,
+    'react-hooks/exhaustive-deps': 0,
     '@stylistic/indent': [
       'error',
       2
@@ -78,6 +81,18 @@ module.exports = {
       'error',
       'property'
     ],
+    '@stylistic/function-call-argument-newline': [
+      'error',
+      'never'
+    ],
+    '@stylistic/object-property-newline': [
+      'error',
+      { allowAllPropertiesOnSameLine: true }
+    ],
+    '@stylistic/multiline-ternary': [
+      'error',
+      'always-multiline'
+    ],
     '@stylistic/member-delimiter-style': 'off',
     '@stylistic/no-extra-parens': 'off',
     'simple-import-sort/imports': [
@@ -86,26 +101,20 @@ module.exports = {
         groups: [
           // Packages `react` related packages come first.
           ['^react'],
-          // Libs Packages
-          [
-            '^@?\\w',
-            '^(@|components)(/.*|$)'
-          ],
-          // I18n
-          ['^(@i18n)'],
+          ['^next'],
           // Themes
-          ['^(@themes)'],
+          ['^(@/themes)'],
           // Internal packages.
-          ['^(@atoms)(/.*|$)'],
-          ['^(@molecules)(/.*|$)'],
-          ['^(@organisms)(/.*|$)'],
-          ['^(@layouts)(/.*|$)'],
-          ['^(@libs)(/.*|$)'],
-          ['^(@store)(/.*|$)'],
-          ['^(@hooks)(/.*|$)'],
-          ['^(@models)(/.*|$)'],
-          ['^(@utils)(/.*|$)'],
-          ['^(@mocks)(/.*|$)'],
+          ['^(@/atoms)(/.*|$)'],
+          ['^(@/molecules)(/.*|$)'],
+          ['^(@/organisms)(/.*|$)'],
+          ['^(@/layouts)(/.*|$)'],
+          ['^(@/lib)(/.*|$)'],
+          ['^(@/store)(/.*|$)'],
+          ['^(@/hooks)(/.*|$)'],
+          ['^(@/models)(/.*|$)'],
+          ['^(@/utils)(/.*|$)'],
+          ['^(@/mocks)(/.*|$)'],
           // Side effect imports.
           ['^\\u0000'],
           // Parent imports. Put `..` last.
