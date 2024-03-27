@@ -11,8 +11,8 @@
     "pre-commit": "lint-staged && vitest run",
     "pre-push": "eslint . --fix --max-warnings=0 && npm run build",
     "prepare": "husky config/.husky",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006 -c config/.storybook",
+    "build-storybook": "storybook build -c config/.storybook"
   },
   "dependencies": {
     "next": "14.1.3",

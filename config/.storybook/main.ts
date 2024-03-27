@@ -1,8 +1,10 @@
 import type { StorybookConfig } from "@storybook/nextjs";
 import path from 'path'
 
+const rootDir = path.resolve(__dirname, '../..');
+
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: [`${rootDir}/**/*.mdx`, `${rootDir}/**/*.stories.@(js|jsx|mjs|ts|tsx)`],
   addons: [
     "@storybook/addon-onboarding",
     "@storybook/addon-links",
@@ -17,17 +19,16 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
-  staticDirs: ["../public"],
-  // TODO: Add to post
+  staticDirs: [`${rootDir}/public`],
   webpackFinal: async (config) => {
     if (!config.resolve) return config;
 
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@/': path.resolve(__dirname, '../src/'),
-      '@/atoms': path.resolve(__dirname, '../src/components/atoms'),
-      '@/molecules': path.resolve(__dirname, '../src/components/molecules'),
-      '@/organisms': path.resolve(__dirname, '../src/components/organisms')
+      '@/': `${rootDir}/src/`,
+      '@/atoms': `${rootDir}/src/components/atoms`,
+      '@/molecules': `${rootDir}/src/components/molecules`,
+      '@/organisms': `${rootDir}/src/components/organisms`
     };
 
     return config;
