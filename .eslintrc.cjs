@@ -9,18 +9,7 @@ module.exports = {
     JSX: true
   },
   ignorePatterns: ['*.md'],
-  extends: [
-    'standard',
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:@next/next/recommended',
-    'plugin:tailwindcss/recommended',
-    'plugin:testing-library/react',
-    'plugin:vitest/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@stylistic/all-extends'
-  ],
+  extends: ['standard', 'eslint:recommended', 'plugin:react/recommended', 'plugin:@next/next/recommended', 'plugin:tailwindcss/recommended', 'plugin:testing-library/react', 'plugin:vitest/recommended', 'plugin:react-hooks/recommended', 'plugin:@typescript-eslint/recommended', 'plugin:@stylistic/all-extends', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
