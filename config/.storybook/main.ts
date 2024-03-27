@@ -1,6 +1,8 @@
 import type { StorybookConfig } from "@storybook/nextjs";
 import path from 'path'
 
+import '@storybook/addon-console';
+
 const rootDir = path.resolve(__dirname, '../..');
 
 const config: StorybookConfig = {
@@ -11,6 +13,10 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
+    "@storybook/addon-themes",
+    "@storybook/addon-storysource",
+    "@whitespace/storybook-addon-html",
+    "storybook-addon-pseudo-states"
   ],
   framework: {
     name: "@storybook/nextjs",
