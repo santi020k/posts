@@ -4,7 +4,8 @@ export enum types {
 }
 
 export interface ButtonProps {
-  children: React.ReactNode;
-  onClick: () => void;
-  type: types;
+  children?: React.ReactNode;
+  label?: string;
+  onClick?: () => void;
+  type?: types;
 }
