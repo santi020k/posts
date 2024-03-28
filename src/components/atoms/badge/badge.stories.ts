@@ -26,7 +26,7 @@ const meta = {
       description: 'The size of badge',
       options: Object.values(BadgeSizes),
       table: {
-        defaultValue: { summary: BadgeSizes.Medium },
+        defaultValue: { summary: BadgeSizes.Small },
         type: { summary: 'BadgeSizes' }
       }
     }

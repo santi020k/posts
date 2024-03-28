@@ -14,13 +14,13 @@ enum BadgeSizes {
 }
 
 interface BadgeProps extends React.ComponentPropsWithoutRef<'span'> {
-  label: string;
+  label?: string;
   variation?: BadgeVariations;
   size?: BadgeSizes;
   children?: React.ReactNode;
 }
 
-const Badge: React.FC<BadgeProps> = ({ label, variation = BadgeVariations.Primary, size = BadgeSizes.Medium, children, ...badgeProps }) => {
+const Badge: React.FC<BadgeProps> = ({ label, variation = BadgeVariations.Primary, size = BadgeSizes.Small, children, ...badgeProps }) => {
   const variationToClasses: Record<BadgeVariations, string> = {
     [BadgeVariations.Primary]: 'bg-blue-500',
     [BadgeVariations.Secondary]: 'bg-gray-500',

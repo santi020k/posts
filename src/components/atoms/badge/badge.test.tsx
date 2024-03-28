@@ -9,7 +9,7 @@ describe('Badge component', () => {
     const badge = getByText('Default')
     expect(badge).toBeInTheDocument()
     expect(badge.getAttribute('class')).toContain('bg-blue-500')
-    expect(badge.getAttribute('class')).toContain('py-1.5')
+    expect(badge.getAttribute('class')).toContain('py-1')
   })
 
   it('renders primary badge correctly', () => {
