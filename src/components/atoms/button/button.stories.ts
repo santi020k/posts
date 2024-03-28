@@ -12,7 +12,7 @@ const meta = {
   tags: ['autodocs'],
   args: { onClick: fn() },
   argTypes: {
-    type: {
+    variation: {
       control: { type: 'select' },
       description: 'The variation of button',
       options: Object.values(ButtonVariations),

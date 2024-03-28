@@ -39,7 +39,7 @@ const Button: React.FC<ButtonProps> = ({ children, label, variation = ButtonVari
   const buttonClasses = `rounded-md text-white focus:outline-none ${sizeToClasses[size]} ${variationToClasses[variation]}`
 
   return (
-    <button className={twMerge(buttonClasses)} {...buttonProps}>
+    <button {...buttonProps} className={twMerge(buttonClasses, buttonProps.className)}>
       {label ?? children ?? 'Button'}
     </button>
   )
